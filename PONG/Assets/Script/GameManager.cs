@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public int scoreToReach = 1;
+    public int scoreToReach;
     public Ball ball;
 
     public PlayerPadal playerPaddle;
@@ -23,11 +23,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        CheckScore();
         if (Input.GetKeyDown(KeyCode.R))
         {
             NewGame();
         }
-
     }
 
     public void NewGame()
@@ -40,46 +40,37 @@ public class GameManager : MonoBehaviour
     public void StartRound()
     {
          ball.ResetPosition();
-      //
-      //ball.AddStartingForce();
     }
 
     public void PlayerScores()
     {
-        CheckScore();
+      
         SetPlayerScore(playerScore + 1);
         StartRound();
-        CheckScore();
-        print("check 1");
-
+       
     }
 
     public void ComputerScores()
     {
-        CheckScore();
+
         SetComputerScore(computerScore + 1);
         StartRound();
-        CheckScore();
-        print("check 2");
-    }
 
+    }
     private void SetPlayerScore(int score)
     {
-        CheckScore();
+      
         playerScore = score;
         playerScoreText.text = score.ToString();
-        CheckScore();
-        print("check 3");
-
+      
     }
 
     private void SetComputerScore(int score)
     {
-        CheckScore();
+       
         computerScore = score;
         computerScoreText.text = score.ToString();
-        CheckScore();
-        print("check 4");
+       
     }
 
     private void CheckScore()
@@ -87,7 +78,7 @@ public class GameManager : MonoBehaviour
         if (playerScore==scoreToReach || computerScore==scoreToReach)
         {
             SceneManager.LoadScene(2);
-            print("checking update");
+          
         }
     }
 }

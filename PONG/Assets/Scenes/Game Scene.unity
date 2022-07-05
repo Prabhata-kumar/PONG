@@ -1254,7 +1254,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
-  rigidbody: {fileID: 1078987256}
+  rb: {fileID: 1078987256}
+  testForce: {x: -3, y: 1.9}
 --- !u!1 &1395914422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,6 +1285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70b699289bcf816429d619a09fc71e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreToReach: 3
   ball: {fileID: 1078987257}
   playerPaddle: {fileID: 568451703}
   playerScoreText: {fileID: 262027788}
